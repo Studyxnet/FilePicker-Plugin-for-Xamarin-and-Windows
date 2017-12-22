@@ -102,5 +102,11 @@ namespace Plugin.FilePicker
             if (picked != null)
                 picked (null, e);
         }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            OnFilePickCancelled();
+        }
     }
 }

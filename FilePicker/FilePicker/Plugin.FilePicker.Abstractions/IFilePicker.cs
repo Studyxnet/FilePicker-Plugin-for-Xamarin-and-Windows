@@ -7,7 +7,7 @@ namespace Plugin.FilePicker.Abstractions
     /// </summary>
     public interface IFilePicker
     {
-        Task<FileData> PickFile ();
+        Task<FileData> PickFile (string fileType = "file/*");
 
         Task<bool> SaveFile (FileData fileToSave);
 

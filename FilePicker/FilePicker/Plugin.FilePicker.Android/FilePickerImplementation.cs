@@ -27,9 +27,9 @@ namespace Plugin.FilePicker
             _context = Application.Context;
         }
 
-        public async Task<FileData> PickFile ()
+        public async Task<FileData> PickFile (string fileType = "file/*")
         {
-            var media = await TakeMediaAsync ("file/*", Intent.ActionGetContent);
+            var media = await TakeMediaAsync (fileType, Intent.ActionGetContent);
 
             return media;
         }

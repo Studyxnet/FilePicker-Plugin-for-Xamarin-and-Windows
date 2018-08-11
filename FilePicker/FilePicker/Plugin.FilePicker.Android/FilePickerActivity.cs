@@ -87,6 +87,12 @@ namespace Plugin.FilePicker
             return name;
         }
 
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            FilePickCancelled?.Invoke(null, null);
+        }
+
         internal static event EventHandler<FilePickerEventArgs> FilePicked;
         internal static event EventHandler<EventArgs> FilePickCancelled;
 
